@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Files</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        h1 { color: #333; }
+        ul { list-style: none; padding: 0; }
+        li { margin: 10px 0; }
+        a {
+            color: #0070f3;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Available Files</h1>
+    <ul id="file-list">Loading...</ul>
+
+    <script>
+        fetch('/api/files')
+            .then(res => res.json())
+            .then(data => {
+                const list = document.getElementById('file-list');
+                list.innerHTML = data.files
+                    .map(file => `<li><a href="/${file}">${file}</a></li>`)
+                    .join('');
+            });
+    </script>
+</body>
+</html>
