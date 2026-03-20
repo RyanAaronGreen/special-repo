@@ -1,9 +1,18 @@
 {
-  "files": [
-    "TearsOfSteel_2997-DNxHD_8CH_CC_30.mp4",
-    "accurate_proxy_audio_1-8.ogg",
-    "files.json",
-    "flower-framerate-29_970.mp4",
-    "output_surround_5.1.aac"
+  "directories": [
+    {
+      "name": "Flower Video 29.97fps",
+      "path": "flower-video_2997",
+      "files": [
+        "flower-framerate-29_970.mp4"
+      ]
+    },
+    {
+      "name": "Tears of Steel 29.97fps",
+      "path": "tears-of-steel_2997",
+      "files": [
+        "TearsOfSteel_2997-DNxHD_8CH_CC_30.mp4"
+      ]
+    }
   ]
 }
