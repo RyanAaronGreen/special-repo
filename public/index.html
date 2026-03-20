@@ -27,12 +27,12 @@
     <ul id="file-list">Loading...</ul>
 
     <script>
-        fetch('/api/files')
+        fetch('/files/files.json')
             .then(res => res.json())
             .then(data => {
                 const list = document.getElementById('file-list');
                 list.innerHTML = data.files
-                    .map(file => `<li><a href="/${file}">${file}</a></li>`)
+                    .map(file => `<li><a href="/files/${file}">${file}</a></li>`)
                     .join('');
             });
     </script>
