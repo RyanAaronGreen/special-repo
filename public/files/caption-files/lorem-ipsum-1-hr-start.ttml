@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tt xmlns="http://www.w3.org/ns/ttml"
+    xmlns:tts="http://www.w3.org/ns/ttml#styling"
+    xmlns:ttp="http://www.w3.org/ns/ttml#parameter"
+    ttp:timeBase="media"
+    xml:lang="en">
+
+  <!--
+    Head section: defines reusable styles and layout regions.
+    Think of "regions" as positioning boxes on screen (like CSS absolute positioning),
+    and "styles" as the font/color rules applied to text within those regions.
+  -->
+  <head>
+    <styling>
+      <!-- Default style applied to all captions -->
+      <style xml:id="defaultStyle"
+             tts:fontFamily="Arial, Helvetica, sans-serif"
+             tts:fontSize="24px"
+             tts:color="#FFFFFF"
+             tts:backgroundColor="#000000CC"
+             tts:textAlign="center"
+             tts:displayAlign="after" />
+
+      <!-- Emphasized style for variation -->
+      <style xml:id="emphasisStyle"
+             tts:fontFamily="Georgia, serif"
+             tts:fontSize="28px"
+             tts:color="#FFD700"
+             tts:backgroundColor="#1A1A1ACC"
+             tts:textAlign="center"
+             tts:fontStyle="italic"
+             tts:displayAlign="after" />
+
+      <!-- Minimal style for variation -->
+      <style xml:id="minimalStyle"
+             tts:fontFamily="Courier New, monospace"
+             tts:fontSize="22px"
+             tts:color="#00FF88"
+             tts:backgroundColor="#000000AA"
+             tts:textAlign="left"
+             tts:displayAlign="center" />
+    </styling>
+
+    <layout>
+      <!--
+        Regions define WHERE on screen the text appears.
+        origin="x% y%" sets top-left corner; extent="w% h%" sets the box size.
+        The "bottom center" region is the classic subtitle position.
+      -->
+      <region xml:id="bottomCenter"
+              tts:origin="10% 75%"
+              tts:extent="80% 20%" />
+
+      <region xml:id="middleCenter"
+              tts:origin="10% 40%"
+              tts:extent="80% 20%" />
+
+      <region xml:id="topCenter"
+              tts:origin="10% 5%"
+              tts:extent="80% 20%" />
+    </layout>
+  </head>
+
+  <!--
+    Body contains the timed content. Each <p> is a caption event.
+    begin/end attributes control WHEN the text appears/disappears.
+    The style and region attributes control HOW and WHERE it looks.
+
+    We cycle through different styles, regions, and lorem ipsum variations
+    to demonstrate TTML's flexibility.
+  -->
+  <body>
+    <div>
+
+      <p begin="01:00:00.000" end="01:00:04.000"
+         style="defaultStyle" region="bottomCenter">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+
+      <p begin="01:00:04.000" end="01:00:08.000"
+         style="emphasisStyle" region="middleCenter">
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+
+      <p begin="01:00:08.000" end="01:00:12.000"
+         style="minimalStyle" region="middleCenter">
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+      </p>
+
+      <p begin="01:00:12.000" end="01:00:16.000"
+         style="defaultStyle" region="topCenter">
+        Duis aute irure dolor in reprehenderit in voluptate velit esse.
+      </p>
+
+      <p begin="01:00:16.000" end="01:00:20.000"
+         style="emphasisStyle" region="bottomCenter">
+        Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.
+      </p>
+
+      <p begin="01:00:20.000" end="01:00:24.000"
+         style="minimalStyle" region="topCenter">
+        Cupidatat non proident, sunt in culpa qui officia deserunt mollit.
+      </p>
+
+      <p begin="01:00:24.000" end="01:00:28.000"
+         style="defaultStyle" region="middleCenter">
+        Anim id est <span tts:color="#FF6347" tts:fontWeight="bold">laborum</span>.
+        Proin gravida nibh vel velit auctor aliquet.
+      </p>
+
+      <p begin="01:00:28.000" end="01:00:30.000"
+         style="emphasisStyle" region="bottomCenter">
+        Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet.
+      </p>
+
+    </div>
+  </body>
+
+</tt>

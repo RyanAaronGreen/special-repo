@@ -13,6 +13,14 @@
       "files": [
         "Tears-of-Steel.mp4"
       ]
+    },
+    {
+      "name": "Captions",
+      "path": "caption-files",
+      "files": [
+        "lorem-ipsum-1-hr-start.ttml",
+        "lorem-ipsum-zero-start.ttml"
+      ]
     }
   ]
 }
